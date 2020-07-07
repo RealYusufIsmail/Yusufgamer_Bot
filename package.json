@@ -1,0 +1,23 @@
+{
+  "name": "Yusufgamer_Bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realyusufismail/Yusufgamer_Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/realyusufismail/Yusufgamer_Bot/issues"
+  },
+  "homepage": "https://github.com/realyusufismail/Yusufgamer_Bot#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
