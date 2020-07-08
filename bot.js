@@ -186,7 +186,7 @@ else if(isValidCommand(message, "mute")){
     let memberId = message.content.substring(message.content.indexOf(' ')+1);
     let member = message.guild.members.cache.get(memberId);
     if(member){
-      if(member.hasPermission(['KICK_MEMBERS','BAN_MEMBERS'])&& !message.member.hasPermission('ADMINISTRATOR')){
+      if(member.hasPermission(['KICK_MEMBERS'])&& !message.member.hasPermission('ADMINISTRATOR')){
        message.channel.send("You dont have permission to mute this person. Nice try!! :laughing:")
       }
       else{
@@ -210,7 +210,7 @@ else if(isValidCommand(message, "mute")){
   
 }
 else if(isValidCommand(message,"unmute")){
-  if(message.member.hasPermission(['KICK_MEMBERS','BAN_MEMBERS'])){
+  if(message.member.hasPermission(['KICK_MEMBERS'])){
     message.channel.send("You dont have permission to unmute people!");
   }
   else {
