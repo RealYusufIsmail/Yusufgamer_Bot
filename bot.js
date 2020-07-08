@@ -178,7 +178,69 @@ else {
 
 } 
 }
+else if(isValidCommand(message, "mute")){
+  if(message.member.hasPermission(['KICK_MEMBERS','BAN_MEMBERS'])){
+    message.channel.send("You dont have permission to mute people!");
+  }
+  else {
+    let memberId = message.content.substring(message.content.indexOf(' ')+1);
+    let member = message.guild.members.cache.get(memberId);
+    if(member){
+      if(member.hasPermission(['KICK_MEMBERS','BAN_MEMBERS'])&& !message.member.hasPermission('ADMINISTRATOR')){
+       message.channel.send("You dont have permission to mute this person. Nice try!! :laughing:")
+      }
+      else{
+        let mutedrole = message.guild.roles.cache.get('722004435764772904');
+        if (mutedrole){
+          member.roles.add(mutedrole);
+          message.send.channel("The user was muted")
+        }
+        else{
+        message.channel.send("Muted role not found.");
 
+        }
+       
+      }
+    }
+    else{
+       message.channel.send("Member does not exist");
+
+    }
+  }
+  
+}
+else if(isValidCommand(message,"unmute")){
+  if(message.member.hasPermission(['KICK_MEMBERS','BAN_MEMBERS'])){
+    message.channel.send("You dont have permission to unmute people!");
+  }
+  else {
+    let memberId = message.content.substring(message.content.indexOf(' ')+1);
+    let member = message.guild.members.cache.get(memberId);
+    if(member){
+      if(member.hasPermission(['KICK_MEMBERS','BAN_MEMBERS'])&& !message.member.hasPermission('ADMINISTRATOR')){
+       message.channel.send("You dont have permission to unmute this person. Nice try!! :laughing:")
+      }
+      else{
+        let mutedrole = message.guild.roles.cache.get('722004435764772904');
+        if (mutedrole){
+          member.roles.remove(mutedrole);
+          message.send.channel("The user was unmuted")
+        }
+        else{
+        message.channel.send("Muted role not found.");
+
+        }
+       
+      }
+    }
+    else{
+       message.channel.send("Member does not exist");
+
+    }
+  }
+  
+  
+}
 });
  
     
