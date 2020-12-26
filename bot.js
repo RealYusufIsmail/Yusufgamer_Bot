@@ -240,9 +240,10 @@ else if(isValidCommand(message,"unmute")){
   }
   
   else if(isValidCommand(message,"Invitelink")){
-     f(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
+     if(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
     message.channel.send("You dont have permission to unmute people!");
   }
+     else{
      let invite = await message.channel.createInvite(
   {
     maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
