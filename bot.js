@@ -7,7 +7,19 @@ client.login(process.env.BOT_TOKEN);
 client.on("ready", () => {
    client.user.setActivity("Helping people who are typing &help and responding to commands")
 })
+const { GiveawaysManger } = require('discord-giveaways');
 
+client.giveawaysManger = new GiveawaysManger(client, {
+  storage: "./giveaways.json",
+  updateCountdownEvery: 5000,
+  default: {
+      botCanwin: false,
+      exemptPermissions: ["MANAGE_MESSAGES", "ADMINISTRATOR"],
+      embedColour: "#FF000",
+      reaction: "🎉"
+  }
+
+});
 
 client.on('ready',() =>{
  console.log(`${client.user.tag} has logged in.`);
@@ -238,22 +250,22 @@ else if(isValidCommand(message,"unmute")){
 
     }
   }
-  
-  else if(isValidCommand(message,"Invitelink")){
-     if(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
-    message.channel.send("You dont have permission to unmute people!");
-  }
-     else{
-     let invite = await message.channel.createInvite(
-  {
-    maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
-    maxUses: 1 // maximum times it can be used
-  },
-  `Requested with command by ${message.author.tag}`
+}
+else if(isValidCommand(message,"Invitelink")){
+  if(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
+ message.channel.send("You dont have permission to unmute people!");
+}
+  else{
+  let invite = await message.channel.createInvite(
+{
+ maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
+ maxUses: 1 // maximum times it can be used
+},
+`Requested with command by ${message.author.tag}`
 )
 .catch(console.log);
 
-  message.reply(invite ? `Here's your invite: ${invite}` : "There has been an error during the creation of the invite.");
+message.reply(invite ? `Here's your invite: ${invite}` : "There has been an error during the creation of the invite.");
 }
 }
 });
