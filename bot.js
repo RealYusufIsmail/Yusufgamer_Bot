@@ -7,19 +7,6 @@ client.login(process.env.BOT_TOKEN);
 client.on("ready", () => {
    client.user.setActivity("Helping people who are typing &help and responding to commands")
 })
-const { GiveawaysManger } = require('discord-giveaways');
-
-client.giveawaysManger = new GiveawaysManger(client, {
-  storage: "./giveaways.json",
-  updateCountdownEvery: 5000,
-  default: {
-      botCanwin: false,
-      exemptPermissions: ["MANAGE_MESSAGES", "ADMINISTRATOR"],
-      embedColour: "#FF000",
-      reaction: "🎉"
-  }
-
-});
 
 client.on('ready',() =>{
  console.log(`${client.user.tag} has logged in.`);
