@@ -8,6 +8,7 @@ client.on("ready", () => {
    client.user.setActivity("Helping people who are typing &help and responding to commands")
 })
 
+
 client.on('ready',() =>{
  console.log(`${client.user.tag} has logged in.`);
 
@@ -237,22 +238,21 @@ else if(isValidCommand(message,"unmute")){
 
     }
   }
-}
-else if(isValidCommand(message,"Invite-link")){
-  if(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
- message.channel.send("You dont have permission to unmute people!");
-}
-  else{
-  let invite = await message.channel.createInvite(
-{
- maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
- maxUses: 1 // maximum times it can be used
-},
-`Requested with command by ${message.author.tag}`
+  
+  else if(isValidCommand(message,"Invitelink")){
+     f(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
+    message.channel.send("You dont have permission to unmute people!");
+  }
+     let invite = await message.channel.createInvite(
+  {
+    maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
+    maxUses: 1 // maximum times it can be used
+  },
+  `Requested with command by ${message.author.tag}`
 )
 .catch(console.log);
 
-message.reply(invite ? `Here's your invite: ${invite}` : "There has been an error during the creation of the invite.");
+  message.reply(invite ? `Here's your invite: ${invite}` : "There has been an error during the creation of the invite.");
 }
 }
 });
