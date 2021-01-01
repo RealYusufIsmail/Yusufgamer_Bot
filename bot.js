@@ -238,7 +238,7 @@ else if(isValidCommand(message,"unmute")){
     }
   }
 }
-else if(isValidCommand(message,"Invitelink")){
+else if(isValidCommand(message,"Invite-link")){
   if(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
  message.channel.send("You dont have permission to unmute people!");
 }
