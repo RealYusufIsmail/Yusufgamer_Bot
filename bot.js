@@ -238,9 +238,10 @@ else if(isValidCommand(message,"unmute")){
 
     }
   }
-  
+
+}
   else if(isValidCommand(message,"Invitelink")){
-     f(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
+     if(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
     message.channel.send("You dont have permission to unmute people!");
   }
      let invite = await message.channel.createInvite(
@@ -254,8 +255,9 @@ else if(isValidCommand(message,"unmute")){
 
   message.reply(invite ? `Here's your invite: ${invite}` : "There has been an error during the creation of the invite.");
 }
+
 }
-});
+);
  
     
 //npm install -g nodemon
