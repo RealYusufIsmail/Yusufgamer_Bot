@@ -237,7 +237,6 @@ else if(isValidCommand(message,"unmute")){
        message.channel.send("Member does not exist");
 
     }
-  }
 }
 }
 });
