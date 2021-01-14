@@ -240,10 +240,13 @@ else if(isValidCommand(message,"unmute")){
   }
 
   
-else if(isValidCommand(message,"Invitelink")){
-     if(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
+ if(isValidCommand(message,"Invitelink")){
+   
+  if(message.member.hasPermission(['CREATE_INSTANT_INVITE'])){
     message.channel.send("You dont have permission to unmute people!");
   }
+   else{
+      
      let invite = await message.channel.createInvite(
   {
     maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
@@ -254,6 +257,7 @@ else if(isValidCommand(message,"Invitelink")){
 .catch(console.log);
 
   message.reply(invite ? `Here's your invite: ${invite}` : "There has been an error during the creation of the invite.");
+}
 }
 }
 });
