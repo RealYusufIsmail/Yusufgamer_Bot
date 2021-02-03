@@ -91,7 +91,7 @@ else if(isValidCommand(message, "number-of-invites")){
 }
 else if(isValidCommand(message, "del")){
    let args = message.content.toLowerCase().substring(5);
-   let roleNames = args.split(", ");
+   let roleNames = args.split(",");
    let roleSet = new Set(roleNames);
  let { cache } = message.guild.roles;
  roleSet.forEach(roleName => {
