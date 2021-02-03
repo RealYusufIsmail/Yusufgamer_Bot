@@ -89,9 +89,8 @@ else if(isValidCommand(message, "number-of-invites")){
       }
   )
 }
-  
 
-}
+
 else if(isValidCommand(message, "del")){
    let args = message.content.toLowerCase().substring(5);
    let roleNames = args.split(", ");
