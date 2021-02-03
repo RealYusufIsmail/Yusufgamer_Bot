@@ -25,7 +25,8 @@ if(isValidCommand(message, "hello"))
     message.reply("To kick type &kick. To unban type &unban. To ban a user type &ban. To roll dice type &rolldice. To add a role type &add role name. To remove role type &del role name. You can do more than one in the same time apllies to adding and removing roles. To embed a message type &embed. &say to post announcment. only in the bot owner server. More commands comming soon");
 if (isValidCommand(message, "rolldice"))
     message.reply("rolled a " + rollDice());
-   
+
+
 else if(isValidCommand(message, "add")){
    let args = message.content.toLowerCase().substring(5);
    let roleNames = args.split(", ");
@@ -65,6 +66,7 @@ else if(isValidCommand(message, "add")){
    });
    
 } 
+
 else if(isValidCommand(message, "del")){
    let args = message.content.toLowerCase().substring(5);
    let roleNames = args.split(", ");
