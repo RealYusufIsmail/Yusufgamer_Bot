@@ -22,7 +22,7 @@ if(message.author.bot)return;
 if(isValidCommand(message, "hello"))
     message.reply("hello"); 
  if (isValidCommand(message,"help"))
-    message.reply("To kick type &kick. To unban type &unban. To ban a user type &ban. To roll dice type &rolldice. To add a role type &add role name. To remove role type &del role name. You can do more than one in the same time apllies to adding and removing roles. To embed a message type &embed. &say to post announcment. only in the bot owner server. More commands comming soon");
+    message.reply("To kick type &kick. To unban type &unban. To ban a user type &ban. To roll dice type &rolldice. To add a role type &add role name. To remove role type &del role name. You can do more than one in the same time apllies to adding and removing roles. To embed a message type &embed. &say to post announcment. only in the bot owner server. to check if the bot is working do &test. To see how many invites someone has do &number-of-invites. More commands comming soon");
 if (isValidCommand(message, "del"))
     message.reply("rolled a " + rollDice());
 if (isValidCommand(message, "test"))
@@ -68,7 +68,7 @@ else if(isValidCommand(message, "add")){
    });
    
 } 
-else if(isValidCommand(message, "invitelink")){
+else if(isValidCommand(message, "number-of-invites")){
   var user = message.author;
 
   message.guild.fetchInvites()
