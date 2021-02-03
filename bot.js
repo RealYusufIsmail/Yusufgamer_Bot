@@ -26,7 +26,7 @@ if(isValidCommand(message, "hello"))
 if (isValidCommand(message, "del"))
     message.reply("rolled a " + rollDice());
 if (isValidCommand(message, "test"))
-  message.reply("Test 123 Bot is working")
+  message.reply("Test 123 Bot is working");
 
 
 else if(isValidCommand(message, "add")){
