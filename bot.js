@@ -66,7 +66,25 @@ else if(isValidCommand(message, "add")){
    });
    
 } 
+if(message.content === "invites"){
+  var user = message.author;
 
+  message.guild.fetchInvites()
+  .then
+
+  (invites =>
+      {
+          const userInvites = invites.array().filter(o => o.inviter.id === user.id);
+          var userInviteCount = 0;
+          for(var i=0; i < userInvites.length; i++)
+          {
+              var invite = userInvites[i];
+              userInviteCount += invite['uses'];
+          }
+               message.reply(`You have ${userInviteCount} invites.`);
+      }
+  )
+}
 else if(isValidCommand(message, "del")){
    let args = message.content.toLowerCase().substring(5);
    let roleNames = args.split(", ");
