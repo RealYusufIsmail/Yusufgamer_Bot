@@ -66,7 +66,7 @@ else if(isValidCommand(message, "add")){
    });
    
 } 
-if(message.content === "invites"){
+else if(isValidCommand(message, "invitelink")){
   var user = message.author;
 
   message.guild.fetchInvites()
