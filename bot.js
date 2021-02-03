@@ -89,11 +89,7 @@ else if(isValidCommand(message, "number-of-invites")){
       }
   )
 }
-
-else if(isValidCommend(message,"invitelink")){
-  channel.createInvite()
-  .then(invite => console.log(`Created an invite with a code of ${invite.code}`))
-  .catch(console.error);
+  
 
 }
 else if(isValidCommand(message, "del")){
