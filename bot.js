@@ -25,7 +25,7 @@ if(isValidCommand(message, "hello"))
     message.reply("To kick type &kick. To unban type &unban. To ban a user type &ban. To roll dice type &rolldice. To add a role type &add role name. To remove role type &del role name. You can do more than one in the same time apllies to adding and removing roles. To embed a message type &embed. &say to post announcment. only in the bot owner server. More commands comming soon");
 if (isValidCommand(message, "del"))
     message.reply("rolled a " + rollDice());
-if (isValidCommand(message, "tets"))
+if (isValidCommand(message, "test"))
   message.reply("Test 123 Bot is working")
 
 
