@@ -3,7 +3,6 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const PREFIX = process.env.PREFIX;
 client.login(process.env.BOT_TOKEN);
-client.user.setStatus('available')
 // Set the bot's "Playing: " status (must be in an event!)
 
 client.on("ready", () => {
