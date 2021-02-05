@@ -29,6 +29,8 @@ if (isValidCommand(message, "del"))
     message.reply("rolled a " + rollDice());
 if (isValidCommand(message, "test"))
   message.reply("Test 123 Bot is working");
+  if (isValidCommand(message, "server"))
+   message.reply(" https://discord.gg/g858J6q");
 
 
 else if(isValidCommand(message, "add")){
